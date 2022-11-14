@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <script type="text/javascript">
-        //suma total de votos
+        //Suma total de votos
         function sumar (){
             var votos1 = Number(document.getElementById('votos1').value);
             var votos2 = Number(document.getElementById('votos2').value);
@@ -39,6 +39,7 @@
             document.getElementById('porcentajeBlanco').value = porcentajeBlanco;
 
             //Comisión directiva
+            var mayoriaCD = 15; 
             var minoriaCD = 5;
 
             var cocienteCD = (cd2 + cd3 + cd4 + cd5)/minoriaCD; 
@@ -83,15 +84,16 @@
             document.getElementById('fiscaTotal').value = parseFloat((fiscaTotal).toFixed(2));
 
             //Asamblea de Representantes
+            var mayoriaAR = 60;
             var minoriaAR = 30;
 
-            var cocienteAR; 
+            var cocienteAR = (ar2 + ar3 + ar4 + ar5)/minoriaAR; 
 
             var ar1;
-            var ar2;
-            var ar3;
-            var ar4;
-            var ar5;
+            var ar2 = votos2/cocienteAR;
+            var ar3 = votos3/cocienteAR;
+            var ar4 = votos4/cocienteAR;
+            var ar5 = votos5/cocienteAR;
 
             var arTotal = ar1 + ar2 + ar3 + ar4 + ar5;
 
