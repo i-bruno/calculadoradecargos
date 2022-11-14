@@ -20,16 +20,16 @@
             document.getElementById('votosTotal').value = votosTotal;
 
         //Calculo de porcentajes de votos
-            var porcentaje1 = Number(parseFloat(Math.round(votos1*100)/document.getElementById('votosTotal').value).toFixed(2));
-            var porcentaje2 = Number(parseFloat(Math.round(votos2*100)/document.getElementById('votosTotal').value).toFixed(2));
-            var porcentaje3 = Number(parseFloat(Math.round(votos3*100)/document.getElementById('votosTotal').value).toFixed(2));
-            var porcentaje4 = Number(parseFloat(Math.round(votos4*100)/document.getElementById('votosTotal').value).toFixed(2));
-            var porcentaje5 = Number(parseFloat(Math.round(votos5*100)/document.getElementById('votosTotal').value).toFixed(2));
+            var porcentaje1 = Number(parseFloat(Math.round(votos1*100)/document.getElementById('votosTotal').value).toFixed(3));
+            var porcentaje2 = Number(parseFloat(Math.round(votos2*100)/document.getElementById('votosTotal').value).toFixed(3));
+            var porcentaje3 = Number(parseFloat(Math.round(votos3*100)/document.getElementById('votosTotal').value).toFixed(3));
+            var porcentaje4 = Number(parseFloat(Math.round(votos4*100)/document.getElementById('votosTotal').value).toFixed(3));
+            var porcentaje5 = Number(parseFloat(Math.round(votos5*100)/document.getElementById('votosTotal').value).toFixed(3));
             var porcentajeBlanco = Number(parseFloat(Math.round(votosBlanco*100)/document.getElementById('votosTotal').value).toFixed(2));
 
             var porcentajeTotal = porcentaje1 + porcentaje2 + porcentaje3 + porcentaje4 + porcentaje5 + porcentajeBlanco;
 
-            document.getElementById('porcentajeTotal').value = parseFloat(Math.round(porcentajeTotal).toFixed(2));
+            document.getElementById('porcentajeTotal').value = parseFloat(Math.round(porcentajeTotal).toFixed(3));
         
             document.getElementById('porcentaje1').value = porcentaje1;
             document.getElementById('porcentaje2').value = porcentaje2;
@@ -39,43 +39,32 @@
             document.getElementById('porcentajeBlanco').value = porcentajeBlanco;
 
             //Comisión directiva
-            var mayoriaCD = 15; 
-            var minoriaCD = 5;
-
-            var cocienteCD = (cd2 + cd3 + cd4 + cd5)/minoriaCD; 
-
             var cd1;
-            
+
             if (porcentaje1<50) {
                 var cd1 = 15;
             } else {
-                var cd1 = parseFloat((((porcentaje1-50)/100)*15)+15).toFixed(2);
+                var cd1 = parseFloat((((porcentaje1-50)/100)*15)+15).toFixed(3);
             };
 
             var minoriaCD = 20 - cd1;
 
+            var cocienteCD = (votos2 + votos3 + votos4 + votos5)/minoriaCD;
+            
             var cd2 = votos2/cocienteCD;
             var cd3 = votos3/cocienteCD;
             var cd4 = votos4/cocienteCD;
             var cd5 = votos5/cocienteCD;
 
-            
-            var cocienteCD = (cd2 + cd3 + cd4 + cd5)/minoriaCD;
-
             var cdTotal = cd1 + cd2 + cd3 + cd4 + cd5;
-            if (porcentaje1<50) {
-                var cd1 = mayoriaCD;
-            } else {
-                var cd1 = "Sacar proporcional";
-            };
-
-            document.getElementById('cd1').value = cd1;
-            document.getElementById('cd2').value = cd2;
-            document.getElementById('cd3').value = cd3;
-            document.getElementById('cd4').value = cd4;
-            document.getElementById('cd5').value = cd5;
-            document.getElementById('cdTotal').value = cdTotal;
             
+            document.getElementById('cd1').value = cd1;
+            document.getElementById('cd2').value = parseFloat(cd2).toFixed(3);
+            document.getElementById('cd3').value = parseFloat(cd3).toFixed(3);
+            document.getElementById('cd4').value = parseFloat(cd4).toFixed(3);
+            document.getElementById('cd5').value = parseFloat(cd5).toFixed(3);
+            document.getElementById('cdTotal').value = parseFloat(cdTotal).toFixed(3);
+
             //Comisión Fiscalizadora
             var cocienteFisca = votosTotal/7;
 
@@ -87,20 +76,26 @@
 
             var fiscaTotal = fisca1 + fisca2 + fisca3 + fisca4 + fisca5;
 
-            document.getElementById('fisca1').value = parseFloat((fisca1).toFixed(2));
-            document.getElementById('fisca2').value = parseFloat((fisca2).toFixed(2));
-            document.getElementById('fisca3').value = parseFloat((fisca3).toFixed(2));
-            document.getElementById('fisca4').value = parseFloat((fisca4).toFixed(2));
-            document.getElementById('fisca5').value = parseFloat((fisca5).toFixed(2));
-            document.getElementById('fiscaTotal').value = parseFloat((fiscaTotal).toFixed(2));
+            document.getElementById('fisca1').value = parseFloat((fisca1).toFixed(3));
+            document.getElementById('fisca2').value = parseFloat((fisca2).toFixed(3));
+            document.getElementById('fisca3').value = parseFloat((fisca3).toFixed(3));
+            document.getElementById('fisca4').value = parseFloat((fisca4).toFixed(3));
+            document.getElementById('fisca5').value = parseFloat((fisca5).toFixed(3));
+            document.getElementById('fiscaTotal').value = parseFloat((fiscaTotal).toFixed(3));
 
             //Asamblea de Representantes
-            var mayoriaAR = 60;
-            var minoriaAR = 30;
-
-            var cocienteAR = (ar2 + ar3 + ar4 + ar5)/minoriaAR; 
-
             var ar1;
+
+            if (porcentaje1<50) {
+                var ar1 = 60;
+            } else {
+                var ar1 = parseFloat((((porcentaje1-50)/100)*60)+60).toFixed(3);
+            };
+
+            var minoriaAR = 90 - ar1;
+
+            var cocienteAR = (votos2 + votos3 + votos4 + votos5)/minoriaAR; 
+
             var ar2 = votos2/cocienteAR;
             var ar3 = votos3/cocienteAR;
             var ar4 = votos4/cocienteAR;
@@ -108,18 +103,12 @@
 
             var arTotal = ar1 + ar2 + ar3 + ar4 + ar5;
 
-            if (porcentaje1<50) {
-                var ar1 = mayoriaAR;
-            } else {
-                var ar1 = parseFloat((((porcentaje1-50)/100)*60)+60).toFixed(2);
-            };
-
-            document.getElementById('ar1').value = ar1;
-            document.getElementById('ar2').value = ar2;
-            document.getElementById('ar3').value = ar3;
-            document.getElementById('ar4').value = ar4;
-            document.getElementById('ar5').value = ar5;
-            document.getElementById('arTotal').value = arTotal;
+            document.getElementById('ar1').value = parseFloat(ar1).toFixed(3);
+            document.getElementById('ar2').value = parseFloat(ar2).toFixed(3);
+            document.getElementById('ar3').value = parseFloat(ar3).toFixed(3);
+            document.getElementById('ar4').value = parseFloat(ar4).toFixed(3);
+            document.getElementById('ar5').value = parseFloat(ar5).toFixed(3);
+            document.getElementById('arTotal').value = parseFloat(arTotal).toFixed(3);
 
         }
 
