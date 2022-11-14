@@ -32,15 +32,6 @@ footer {
     background-color: #bf1b27;
 }
 
-.calculadora {
-    margin: 5px 5px 5px 5px;
-    padding: 5px 5px 5px 5px;
-    background-color: #bf1b27;
-    border-radius: 10px;
-    display:flex;
-    justify-content:space-between;
-}
-
 section {
     margin: 5px 5px 5px 5px;
     padding: 5px 5px 5px 5px;
@@ -80,6 +71,18 @@ input {
     border-style: none;
     text-align: center;
 }
+
+/*Clases*/
+
+.calculadora {
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    background-color: #bf1b27;
+    border-radius: 10px;
+    display:flex;
+    justify-content:space-between;
+}
+
 
 .boton {
     margin: 5px 5px 5px 5px;
