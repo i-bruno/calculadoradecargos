@@ -54,7 +54,7 @@
             if (porcentaje1<50) {
                 var cd1 = 15;
             } else {
-                var cd1 = "Sacar proporcional";
+                var cd1 = parseFloat((((porcentaje1-50)/100)*15)+15).toFixed(2);
             };
 
             document.getElementById('cd1').value = cd1;
@@ -98,7 +98,7 @@
             if (porcentaje1<50) {
                 var ar1 = 60;
             } else {
-                var ar1 = "Sacar proporcional";
+                var ar1 = parseFloat((((porcentaje1-50)/100)*60)+60).toFixed(2);
             };
 
 
