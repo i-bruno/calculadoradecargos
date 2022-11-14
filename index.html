@@ -39,23 +39,25 @@
             document.getElementById('porcentajeBlanco').value = porcentajeBlanco;
 
             //Comisión directiva
-            var minoriaCD = 5;
-
-            var cocienteCD = (cd2 + cd3 + cd4 + cd5)/minoriaCD; 
-
             var cd1;
-            var cd2 = votos2/cocienteCD;
-            var cd3 = votos3/cocienteCD;
-            var cd4 = votos4/cocienteCD;
-            var cd5 = votos5/cocienteCD;
-
-            var cdTotal = cd1 + cd2 + cd3 + cd4 + cd5;
             
             if (porcentaje1<50) {
                 var cd1 = 15;
             } else {
                 var cd1 = parseFloat((((porcentaje1-50)/100)*15)+15).toFixed(2);
             };
+
+            var minoriaCD = 20 - cd1;
+
+            var cd2 = votos2/cocienteCD;
+            var cd3 = votos3/cocienteCD;
+            var cd4 = votos4/cocienteCD;
+            var cd5 = votos5/cocienteCD;
+
+            
+            var cocienteCD = (cd2 + cd3 + cd4 + cd5)/minoriaCD;
+
+            var cdTotal = cd1 + cd2 + cd3 + cd4 + cd5;
 
             document.getElementById('cd1').value = cd1;
             document.getElementById('cd2').value = cd2;
