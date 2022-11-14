@@ -39,26 +39,51 @@
             document.getElementById('porcentajeBlanco').value = porcentajeBlanco;
 
             //Comisión directiva
+            var cargosCD = 5;
 
-            var cd1
-            var cd2
-            var cd3
-            var cd4
-            var cd5
-            var cd6
+            var cocienteCD 
 
-            document.getElementById('cd1').value = cd1;
+            var cd1; 
+            var cd2;
+            var cd3;
+            var cd4;
+            var cd5;
 
             if (porcentaje1<50) {
                 let cd1 = 15;
             } else {
                 let cd1 = 8;
             }
+
+            document.getElementById('cd1').value = cd1;
+            document.getElementById('cd2').value = cd2;
+            document.getElementById('cd3').value = cd3;
+            document.getElementById('cd4').value = cd4;
+            document.getElementById('cd5').value = cd5;
+            document.getElementById('cdTotal').value = cdTotal;
+
+
             
             //Comisión Fiscalizadora
+            var cocienteFisca = votosTotal/7;
+
+            var fisca1 = votos1/cocienteFisca;
+            var fisca2 = votos2/cocienteFisca;
+            var fisca3 = votos3/cocienteFisca;
+            var fisca4 = votos4/cocienteFisca;
+            var fisca5 = votos5/cocienteFisca;
+
+            var fiscaTotal = fisca1 + fisca2 + fisca3 + fisca4 + fisca5;
+
+            document.getElementById('fisca1').value = parseFloat(Math.round(fisca1).toFixed(2));
+            document.getElementById('fisca2').value = parseFloat(Math.round(fisca2).toFixed(2));
+            document.getElementById('fisca3').value = parseFloat(Math.round(fisca3).toFixed(2));
+            document.getElementById('fisca4').value = parseFloat(Math.round(fisca4).toFixed(2));
+            document.getElementById('fisca5').value = parseFloat(Math.round(fisca5).toFixed(2));
+            document.getElementById('fiscaTotal').value = parseFloat(Math.round(fiscaTotal).toFixed(2));
 
             //Asamblea de Representantes
-
+            var cargosAR = 30;
 
         }
 
@@ -83,7 +108,7 @@
 
     <section class="desc">
         <p>
-            Introduzca el nombre de cada lista y la cantidad de votos que le correspondan. También establezca la cantidad de votos en blanco o anulados.
+            Introduzca el nombre de cada lista y la cantidad de votos que le correspondan de mayor a menor, siendo la primer fila correspondiente a la lista ganadora de la elección. También establezca la cantidad de votos en blanco o anulados.
         </p>
     </section>
 
@@ -130,7 +155,7 @@
                             <input type="text" class="cd" name="cd1" id="cd1" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="fisca" name="fisca1" id="fisca1" disabled>
                         </td>
                         <td>
                             
@@ -150,7 +175,7 @@
                             <input type="text" class="cd" name="cd2" id="cd2" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="fisca" name="fisca2" id="fisca2" disabled>
                         </td>
                         <td>
                             
@@ -170,7 +195,7 @@
                             <input type="text" class="cd" name="cd3" id="cd3" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="fisca" name="fisca3" id="fisca3" disabled>
                         </td>
                         <td>
                             
@@ -190,7 +215,7 @@
                             <input type="text" class="cd" name="cd4" id="cd4" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="fisca" name="fisca4" id="fisca4" disabled>
                         </td>
                         <td>
                             
@@ -210,7 +235,7 @@
                             <input type="text" class="cd" name="cd5" id="cd5" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="fisca" name="fisca5" id="fisca5" disabled>
                         </td>
                         <td>
                             
@@ -247,10 +272,10 @@
                             <input type="text" class="votos" name="porcentaje1" id="porcentajeTotal" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="cd" name="cdTotal" id="cdTotal" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="cd" name="fiscaTotal" id="fiscaTotal" disabled>
                         </td>
                         <td>
                             
