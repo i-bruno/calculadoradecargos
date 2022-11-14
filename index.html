@@ -39,24 +39,23 @@
             document.getElementById('porcentajeBlanco').value = porcentajeBlanco;
 
             //Comisión directiva
-            var cargosCD = 5;
+            var minoriaCD = 5;
 
-            var cocienteCD; 
+            var cocienteCD = (cd2 + cd3 + cd4 + cd5)/minoriaCD; 
 
             var cd1;
-            var cd2;
-            var cd3;
-            var cd4;
-            var cd5;
+            var cd2 = votos2/cocienteCD;
+            var cd3 = votos3/cocienteCD;
+            var cd4 = votos4/cocienteCD;
+            var cd5 = votos5/cocienteCD;
 
             var cdTotal = cd1 + cd2 + cd3 + cd4 + cd5;
-
+            
             if (porcentaje1<50) {
                 var cd1 = 15;
             } else {
                 var cd1 = "Sacar proporcional";
             };
-
 
             document.getElementById('cd1').value = cd1;
             document.getElementById('cd2').value = cd2;
@@ -64,8 +63,6 @@
             document.getElementById('cd4').value = cd4;
             document.getElementById('cd5').value = cd5;
             document.getElementById('cdTotal').value = cdTotal;
-
-
             
             //Comisión Fiscalizadora
             var cocienteFisca = votosTotal/7;
@@ -86,9 +83,9 @@
             document.getElementById('fiscaTotal').value = parseFloat((fiscaTotal).toFixed(2));
 
             //Asamblea de Representantes
-            var cargosAR = 30;
+            var minoriaAR = 30;
 
-            var cocienteAr; 
+            var cocienteAR; 
 
             var ar1;
             var ar2;
