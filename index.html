@@ -41,19 +41,22 @@
             //Comisión directiva
             var cargosCD = 5;
 
-            var cocienteCD 
+            var cocienteCD; 
 
-            var cd1; 
+            var cd1;
             var cd2;
             var cd3;
             var cd4;
             var cd5;
 
+            var cdTotal = cd1 + cd2 + cd3 + cd4 + cd5;
+
             if (porcentaje1<50) {
-                let cd1 = 15;
+                var cd1 = 15;
             } else {
-                let cd1 = 8;
-            }
+                var cd1 = "Sacar proporcional";
+            };
+
 
             document.getElementById('cd1').value = cd1;
             document.getElementById('cd2').value = cd2;
@@ -75,15 +78,40 @@
 
             var fiscaTotal = fisca1 + fisca2 + fisca3 + fisca4 + fisca5;
 
-            document.getElementById('fisca1').value = parseFloat(Math.round(fisca1).toFixed(2));
-            document.getElementById('fisca2').value = parseFloat(Math.round(fisca2).toFixed(2));
-            document.getElementById('fisca3').value = parseFloat(Math.round(fisca3).toFixed(2));
-            document.getElementById('fisca4').value = parseFloat(Math.round(fisca4).toFixed(2));
-            document.getElementById('fisca5').value = parseFloat(Math.round(fisca5).toFixed(2));
-            document.getElementById('fiscaTotal').value = parseFloat(Math.round(fiscaTotal).toFixed(2));
+            document.getElementById('fisca1').value = parseFloat((fisca1).toFixed(2));
+            document.getElementById('fisca2').value = parseFloat((fisca2).toFixed(2));
+            document.getElementById('fisca3').value = parseFloat((fisca3).toFixed(2));
+            document.getElementById('fisca4').value = parseFloat((fisca4).toFixed(2));
+            document.getElementById('fisca5').value = parseFloat((fisca5).toFixed(2));
+            document.getElementById('fiscaTotal').value = parseFloat((fiscaTotal).toFixed(2));
 
             //Asamblea de Representantes
             var cargosAR = 30;
+
+            var cocienteAr; 
+
+            var ar1;
+            var ar2;
+            var ar3;
+            var ar4;
+            var ar5;
+
+            var arTotal = ar1 + ar2 + ar3 + ar4 + ar5;
+
+            if (porcentaje1<50) {
+                var ar1 = 60;
+            } else {
+                var ar1 = "Sacar proporcional";
+            };
+
+
+
+            document.getElementById('ar1').value = ar1;
+            document.getElementById('ar2').value = ar2;
+            document.getElementById('ar3').value = ar3;
+            document.getElementById('ar4').value = ar4;
+            document.getElementById('ar5').value = ar5;
+            document.getElementById('arTotal').value = arTotal;
 
         }
 
@@ -158,7 +186,7 @@
                             <input type="text" class="fisca" name="fisca1" id="fisca1" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="ar" name="ar1" id="ar1" disabled>
                         </td>
                     </tr>
                     <tr>
@@ -178,7 +206,7 @@
                             <input type="text" class="fisca" name="fisca2" id="fisca2" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="ar" name="ar2" id="ar2" disabled>
                         </td>
                     </tr>
                     <tr>
@@ -198,7 +226,7 @@
                             <input type="text" class="fisca" name="fisca3" id="fisca3" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="ar" name="ar3" id="ar3" disabled>
                         </td>
                     </tr>
                     <tr>
@@ -218,7 +246,7 @@
                             <input type="text" class="fisca" name="fisca4" id="fisca4" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="ar" name="ar4" id="ar4" disabled>
                         </td>
                     </tr>
                     <tr>
@@ -238,7 +266,7 @@
                             <input type="text" class="fisca" name="fisca5" id="fisca5" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="ar" name="ar5" id="ar5" disabled>
                         </td>
                     </tr>
                     <tr>
@@ -278,7 +306,7 @@
                             <input type="text" class="cd" name="fiscaTotal" id="fiscaTotal" disabled>
                         </td>
                         <td>
-                            
+                            <input type="text" class="ar" name="arTotal" id="arTotal" disabled>
                         </td>
                     </tr>
                     <tr>
