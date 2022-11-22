@@ -115,17 +115,6 @@
         }
     </script>
     
-    <script>
-function imprimir(tabla){
-   var printContents = document.getElementById('tabla').innerHTML;
-        w = window.open();
-        w.document.write(printContents);
-        w.document.close(); // necessary for IE >= 10
-        w.focus(); // necessary for IE >= 10
-		w.print();
-		w.close();
-        return true;}
-</script>
     <title>Calculadora</title>
 </head>
 <body>
@@ -360,7 +349,7 @@ function imprimir(tabla){
                         <td colspan="6">
                             <input type="button" value="Calcular" class="boton" name="calcular" onclick="sumar ()">
                             <input type="reset" value="Resetear" class="boton">
-                            <input type="button" value="Imprimir" class="boton" onclick="javascript:imprimir(tabla);">
+                            <input type="button" value="Imprimir" class="boton" onclick="javascript:window.print()">
                         </td>
                     </tr>
                 </tbody>
