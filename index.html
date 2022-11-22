@@ -116,7 +116,7 @@
     </script>
     
     <script>
-function imprimir(){
+function imprimir(tabla){
     var mywindow = window.open('', 'PRINT', 'height=400,width=600');
     mywindow.document.write('<html><head>');
 	mywindow.document.write('<style>.tabla{width:100%;border-collapse:collapse;margin:16px 0 16px 0;}.tabla th{border:1px solid #ddd;padding:4px;background-color:#d4eefd;text-align:left;font-size:15px;}.tabla td{border:1px solid #ddd;text-align:left;padding:6px;}</style>');
@@ -363,7 +363,7 @@ function imprimir(){
                         <td colspan="6">
                             <input type="button" value="Calcular" class="boton" name="calcular" onclick="sumar ()">
                             <input type="reset" value="Resetear" class="boton">
-                            <input type="button" value="Imprimir" class="boton" onclick="javascript:imprimir();">
+                            <input type="button" value="Imprimir" class="boton" onclick="javascript:imprimir(tabla);">
                         </td>
                     </tr>
                 </tbody>
